@@ -72,7 +72,7 @@ class ChannelAssignmentValidator:
                     self.num_removed_edges += 1
                 else:
                     # Enhance link quality values for an edge in the modified network graph. 
-                    # Link quality is augmented by a random value between upper and lower bound. 
+                    # Link quality is augmented by a random value between upper and lower bound 
                     # in the variable improvement_rate (except when it already equals 1.0).
                     # This is to account for improvements due to interference reduction.
 
