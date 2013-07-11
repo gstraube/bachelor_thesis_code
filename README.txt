@@ -6,7 +6,7 @@ Um die Anwendung zu deployen, wird das AppEngine-SDK von Google benötigt. Diese
 
 wird der Quellcode für die Anwendung deployt, deren Name in der Datei app.yaml festgelegt wurde und die im Vorfeld erstellt werden muss. Hierzu wird ein Google-Konto benötigt, dessen Zugangsdaten beim Hochladen der Anwendung abgefragt werden.
 
-* Orderstruktur
+* Ordnerstruktur
 
 Die Python-Quelldateien liegen im Hauptverzeichnis "Quellcode". Der Unterordner "Quellcode/data" enthält alle Dateien, die der Anwendung als Eingabe dienen und deren Aufbau unten beschrieben wird. Im Unterordner "Quellcode/html" sind die HTML-Templates zu finden. In "Quellcode/mapreduce" sind die Dateien der Mapreduce-Bibliothek enthalten.  
 
