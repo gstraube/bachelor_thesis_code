@@ -102,11 +102,9 @@ class kml:
         kml = self.__doc.createElement('kml')
         kml.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2')
         self.__doc.appendChild(kml)
-        
-        
+           
         document = self.__doc.createElement('Document')
         kml.appendChild(document)
-        #TODO only if provided
         
         docName = self.__doc.createElement('name')
         document.appendChild(docName)
@@ -153,7 +151,7 @@ class kml:
         self.__kml.appendChild(pm)
         pname = self.__doc.createElement("name")
         pm.appendChild(pname)
-        #TODO a seperated attributes subnode?
+
         name_text = self.__doc.createTextNode(name)
         pname.appendChild(name_text)
         pt = self.__doc.createElement("Point")
