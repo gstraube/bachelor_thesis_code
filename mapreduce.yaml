@@ -1,0 +1,43 @@
+mapreduce:
+
+- name: CreateChannelAssignments
+  mapper:
+    input_reader: mapreduce.input_readers.DatastoreInputReader
+    handler: channel_assignment.create_channel_assignments
+    params:
+    - name: entity_kind
+      default: network_graph.NetworkGraphModel
+    - name: processing_rate
+      default: 100
+    - name: min_links
+      default: 10
+    - name: min_neighbors
+      default: 90
+    - name: num_channels
+      default: 2
+
+- name: ValidateAndEvaluate
+  mapper:
+    input_reader: mapreduce.input_readers.DatastoreInputReader
+    handler: channel_assignment.validate_and_evaluate
+    params:
+    - name: entity_kind
+      default: channel_assignment.ChannelAssignmentModel
+    - name: evaluator
+      default: channel_assignment.AverageValuesEvaluator
+    - name: improvement_rate_lower
+      default: 0
+    - name: improvement_rate_upper
+      default: 20
+    - name: num_classes
+      default: 5
+    - name: upper_bound
+      default: 20
+
+- name: ClearDatastore
+  mapper:
+    input_reader: mapreduce.input_readers.DatastoreInputReader
+    handler: channel_assignment.clear_datastore
+    params:
+    - name: entity_kind
+      default: channel_assignment.ChannelAssignmentModel

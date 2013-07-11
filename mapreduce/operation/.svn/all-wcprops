@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/gs178/!svn/ver/132/Code/src/mapreduce/operation
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/gs178/!svn/ver/132/Code/src/mapreduce/operation/base.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/gs178/!svn/ver/132/Code/src/mapreduce/operation/__init__.py
+END
+counters.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/gs178/!svn/ver/132/Code/src/mapreduce/operation/counters.py
+END
+db.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/gs178/!svn/ver/132/Code/src/mapreduce/operation/db.py
+END

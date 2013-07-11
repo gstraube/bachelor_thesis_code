@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Upload time stamp file</title>
+		
+		<style media="screen" type="text/css">
+			body {
+				background: #ffffff;
+				margin: 0;
+				padding: 20px;
+				line-height: 1.4em;
+				font-family: tahoma, arial, sans-serif;
+				font-size: 100%;
+			}
+
+			table {
+				width: 80%;
+				margin: 0;
+				background: #FFFFFF;
+				border: 1px solid #333333;
+				border-collapse: collapse;
+			}
+
+			td, th {
+				border-bottom: 1px solid #333333;
+				padding: 6px 16px;
+				text-align: left;
+			}
+
+			th {
+				background: #EEEEEE;
+			}
+	
+			caption {
+				background: #E0E0E0;
+				margin: 0;
+				border: 1px solid #333333;
+				border-bottom: none;
+				padding: 6px 16px;
+				font-weight: bold;
+			}
+			label{
+				width: 20em;
+				float: right;
+				text-align: left;
+				margin-right: 0.5em;
+				display: block
+			}
+				
+			.submit input{
+				margin-left: 4.5em;
+			}
+				
+			input{
+				color: #781351;
+				background: #fee3ad;
+				border: 1px solid #781351
+			}
+				
+			.submit input{
+				color: #000;
+				background: #ffa20f;
+				border: 2px outset #d7b9c9
+			}
+			
+			fieldset{
+				border: 1px solid #781351;
+				width: 20em
+			}
+				
+			legend{
+				color: #fff;
+				background: #ffa20c;
+				border: 1px solid #781351;
+				padding: 2px 6px
+			} 
+		</style>
+		
+		<script type="text/javascript">
+		
+			function checkForm(){
+
+				var status = true;
+						
+				if (document.upload_files.timestamp_file.value == '') {
+
+					document.getElementById('timestamp_errors').style.color = 'red';
+					
+					document.getElementById('timestamp_errors').innerHTML = 'Required field.';
+
+					status = false;
+					
+				}
+				else{
+					
+					document.getElementById('timestamp_errors').innerHTML = '';
+		
+				}
+				
+
+				if (document.upload_files.backbone_nodes.value == '') {
+
+					document.getElementById('backbone_nodes_errors').style.color = 'red';
+					
+					document.getElementById('backbone_nodes_errors').innerHTML = 'Required field.';
+					
+					status = false;
+					
+				}
+				else{
+
+					document.getElementById('backbone_nodes_errors').innerHTML = '';
+		
+				}
+
+				if (document.upload_files.cable_links.value == '') {
+
+					document.getElementById('cable_links_errors').style.color = 'red';
+					
+					document.getElementById('cable_links_errors').innerHTML = 'Required field.';
+					
+					status = false;
+					
+				}
+				else{
+
+					document.getElementById('cable_links_errors').innerHTML = '';
+		
+				}
+
+				
+
+				if (document.upload_files.ip_to_coordinates.value == '') {
+
+					document.getElementById('ip_to_coordinates_errors').style.color = 'red';
+					
+					document.getElementById('ip_to_coordinates_errors').innerHTML = 'Required field.';
+					
+					status = false;
+					
+				}
+				else{
+
+					document.getElementById('ip_to_coordinates_errors').innerHTML = '';
+		
+				}
+				
+
+				return status;
+
+			}
+			
+		</script>
+		
+	</head>
+
+
+	<body>
+	
+		<form name="upload_files" method="POST" action="/upload_files" onSubmit="return checkForm()" enctype="multipart/form-data">
+		
+		<table>
+
+			<tr>
+				<th>Upload time stamp file.</th>
+
+				 <td colspan="2">
+				 	<div id='timestamp_errors' ></div>
+        			<input name="timestamp_file" type="file" size="50" maxlength="100000" accept="text/*"></input>
+    			</td>
+
+			</tr>
+			
+			<tr>
+				<th>Upload list of backbone nodes.</th>
+
+				 <td colspan="2">
+				 	<div id='backbone_nodes_errors' ></div>
+        			<input name="backbone_nodes" type="file" size="50" maxlength="100000" accept="text/*"></input>
+    			</td>
+
+			</tr>
+			
+			<tr>
+				<th>Upload list of cable links.</th>
+
+				 <td colspan="2">
+				 	<div id='cable_links_errors' ></div>
+        			<input name="cable_links" type="file" size="50" maxlength="100000" accept="text/*"></input>
+    			</td>
+
+			</tr>
+			
+			<tr>
+				<th>Upload mapping of IP addresses to coordinates.</th>
+
+				 <td colspan="2">
+				 	<div id='ip_to_coordinates_errors'></div>
+        			<input name="ip_to_coordinates" type="file" size="50" maxlength="100000" accept="text/*"></input>
+    			</td>
+
+			</tr>
+		
+
+			<tr>
+    			<td colspan="2">
+        			<input type="submit" name="submit" value="Submit">
+    			</td>
+			</tr>
+		</table>
+
+
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Evaluation Overview</title>
+		
+		<style media="screen" type="text/css">
+			body {
+				background: #ffffff;
+				margin: 0;
+				padding: 20px;
+				line-height: 1.4em;
+				font-family: tahoma, arial, sans-serif;
+				font-size: 100%;
+			}
+
+			table {
+				width: 80%;
+				margin: 0;
+				background: #FFFFFF;
+				border: 1px solid #333333;
+				border-collapse: collapse;
+			}
+
+			td, th {
+				border-bottom: 1px solid #333333;
+				padding: 6px 16px;
+				text-align: left;
+			}
+
+			th {
+				background: #EEEEEE;
+			}
+	
+			caption {
+				background: #E0E0E0;
+				margin: 0;
+				border: 1px solid #333333;
+				border-bottom: none;
+				padding: 6px 16px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+
+	<body>
+	
+		<table id="mainTable" border="1">
+				<caption>Evaluation Overview</caption>
+				<thead>
+					<tr>
+						<th>Channel assignment</th>
+						<th>Ascended nodes</th>
+						<th>Relegated nodes</th>
+						<th>Difference</th>
+						<th>Number of removed edges</th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+			
+				<tbody>
+					{% for evaluation in evaluations %}
+					<tr>
+						<td>{{ forloop.counter }}</td>
+						<td>{{ evaluation.ascended_nodes }}</td>
+						<td>{{ evaluation.relegated_nodes }}</td>
+						<td>{{ evaluation.difference }}</td>
+						<td>{{ evaluation.num_removed_edges }}</td>
+						<td><a href="./evaluation_details?key={{ evaluation.key }}">
+							   View channel assignment
+							</a>
+						</td>
+						<td><a href="./map?key={{ evaluation.key }}">
+								View map
+							</a>
+						</td>
+						<td><a href="./network_graph?key={{ evaluation.key }}">
+								View network graph
+							</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+		
+		</table> 
+		
+	</body>
+</html>

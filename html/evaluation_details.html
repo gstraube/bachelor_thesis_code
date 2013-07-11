@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Evaluation Overview</title>
+		
+		<style media="screen" type="text/css">
+			body {
+				background: #ffffff;
+				margin: 0;
+				padding: 20px;
+				line-height: 1.4em;
+				font-family: tahoma, arial, sans-serif;
+				font-size: 100%;
+			}
+
+			table {
+				width: 80%;
+				margin: 0;
+				background: #FFFFFF;
+				border: 1px solid #333333;
+				border-collapse: collapse;
+			}
+
+			td, th {
+				border-bottom: 1px solid #333333;
+				padding: 6px 16px;
+				text-align: left;
+			}
+
+			th {
+				background: #EEEEEE;
+			}
+	
+			caption {
+				background: #E0E0E0;
+				margin: 0;
+				border: 1px solid #333333;
+				border-bottom: none;
+				padding: 6px 16px;
+				font-weight: bold;
+			}
+		</style>
+		
+		<script type="text/javascript">
+
+			// Use random number as offset
+			var randomNumber = Math.ceil(Math.random() * 100);
+			
+			var colors = ['aqua', 'blue', 'fuchsia', 'green', 'lime', 
+			  			  'maroon', 'navy', 'olive', 'purple', 
+			  			  'red', 'silver', 'teal', 'yellow']; 
+			
+			function setColor(id, number){
+				var colorNumber = (parseInt(number) + randomNumber) % 15;
+				var color = colors[colorNumber];
+				myObj = document.getElementById(id);
+				myObj.style.color = color;
+			}
+
+		</script>
+		
+	</head>
+
+
+	<body>
+	
+		<table id="mainTable" border="1">
+				<caption>Channel assignment</caption>
+				<thead>
+					<tr>
+						<th>Node</th>
+						<th>Channel</th>
+					</tr>
+				</thead>
+			
+				<tbody>
+					{% for node in nodes %}
+					<tr>
+						<td>
+							<p id="{{ node.0 }}">
+								{{ node.0 }}
+							</p>
+							<script type="text/javascript">
+								setColor('{{ node.0 }}', '{{ node.2 }}');
+							</script>
+						</td>
+						<td>{{ node.1 }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+		
+		</table> 
+		
+	</body>
+</html>
