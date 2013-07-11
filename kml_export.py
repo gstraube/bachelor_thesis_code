@@ -90,7 +90,8 @@ class KMLExporter:
                 logging.info('Could not find coordinates for node %s' % edge.from_node)
         
         self.kml = kml_writer.get_kml()
-                    
+        
+# The following code was written by Matthias Meißer
 class kml:
     
     def __init__(self,title,description):
