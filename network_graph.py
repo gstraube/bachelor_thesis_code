@@ -131,7 +131,7 @@ class NetworkGraph():
                 if distances[candidate] <= min_distance:
                     min_distance = distances[candidate]
                     min_dist_node = candidate
-            # If and end node was given, return the minimal distance.
+            # If an end node was given, return the minimal distance.
             if min_dist_node == end_node:
                 return min_distance
             nodes.remove(min_dist_node)
